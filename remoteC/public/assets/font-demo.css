@@ -1,0 +1,16 @@
+body {
+  font-family: "CustomFont", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./custom-font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-demo {
+  font-family: "CustomFont", Arial, sans-serif;
+  font-size: 2rem;
+  color: #333;
+}

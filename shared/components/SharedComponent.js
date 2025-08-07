@@ -4,9 +4,9 @@ import "../style/IconFont.css";
 export default function SharedComponent({ children }) {
   return (
     <span
-      className="nds-icon directional-step-backward-f"
+      className="nds-icon directional-caret-up-f"
       style={{
-        padding: 10,
+        padding: 20,
         background: "#007bff",
         color: "#fff",
         border: "none",

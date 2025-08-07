@@ -12,6 +12,13 @@ module.exports = {
     publicPath: "auto",
     clean: true,
   },
+  devServer: {
+    port: 3002,
+    historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+  },
   module: {
     rules: [
       {

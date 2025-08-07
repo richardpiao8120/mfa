@@ -18,18 +18,6 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "public"),
     },
-    proxy: [
-      {
-        context: ["/remoteEntryA.js"],
-        target: "http://localhost:3001",
-        changeOrigin: true,
-      },
-      {
-        context: ["/remoteEntryB.js"],
-        target: "http://localhost:3002",
-        changeOrigin: true,
-      },
-    ],
   },
   module: {
     rules: [
@@ -59,6 +47,7 @@ module.exports = {
       remotes: {
         remoteA: "remoteA@http://localhost:3001/remoteEntryA.js",
         remoteB: "remoteB@http://localhost:3002/remoteEntryB.js",
+        remoteC: "remoteC@http://localhost:3003/remoteEntryC.js",
       },
       shared: {
         react: { singleton: true, requiredVersion: "^18.0.0" },
