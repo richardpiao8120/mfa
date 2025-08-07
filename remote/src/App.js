@@ -1,7 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from './Button';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
       </header>
       <div>
         <h2>Remote App</h2>
-        <Button>Remote Button</Button>
       </div>
       <h1>Hello from Remote</h1>
     </div>
