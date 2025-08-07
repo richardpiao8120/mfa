@@ -12,13 +12,6 @@ module.exports = {
     publicPath: "auto",
     clean: true,
   },
-  devServer: {
-    port: 3001,
-    historyApiFallback: true,
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-  },
   module: {
     rules: [
       {
@@ -43,8 +36,8 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "remote",
-      filename: "remoteEntry.js",
+      name: "remoteA",
+      filename: "remoteEntryA.js",
       exposes: {
         "./Button": "./src/Button",
       },

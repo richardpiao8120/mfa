@@ -7,29 +7,10 @@ module.exports = {
   mode: "development",
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "auto",
     clean: true,
-  },
-  devServer: {
-    port: 3000,
-    historyApiFallback: true,
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
-    proxy: [
-      {
-        context: ["/remoteEntryA.js"],
-        target: "http://localhost:3001",
-        changeOrigin: true,
-      },
-      {
-        context: ["/remoteEntryB.js"],
-        target: "http://localhost:3002",
-        changeOrigin: true,
-      },
-    ],
   },
   module: {
     rules: [
@@ -55,10 +36,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "host",
-      remotes: {
-        remoteA: "remoteA@http://localhost:3001/remoteEntryA.js",
-        remoteB: "remoteB@http://localhost:3002/remoteEntryB.js",
+      name: "remoteB",
+      filename: "remoteEntryB.js",
+      exposes: {
+        "./App": "./src/App",
+        "./Button": "./src/Button",
       },
       shared: {
         react: { singleton: true, requiredVersion: "^18.0.0" },
