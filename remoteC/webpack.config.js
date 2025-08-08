@@ -3,10 +3,9 @@ const path = require("path");
 const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
-  entry: "./src/index.js",
   mode: "development",
   output: {
-    publicPath: "auto",
+    publicPath: "/",
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     clean: true,
@@ -14,9 +13,16 @@ module.exports = {
   devServer: {
     port: 4003,
     historyApiFallback: true,
-    static: {
-      directory: path.join(__dirname, "public"),
-    },
+    static: [
+      {
+        directory: path.resolve(__dirname, "../shared/assets/images"),
+        publicPath: "/images",
+      },
+            {
+        directory: path.resolve(__dirname, "../shared/assets/fonts"),
+        publicPath: "/fonts",
+      },
+    ],
     headers: {
         'Access-Control-Allow-Origin': '*',
     },

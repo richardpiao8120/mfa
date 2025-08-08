@@ -42,7 +42,7 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-              additionalData: `$icon-font-base-url: '/asset/font/aaaaaa.font';`
+               additionalData: `$icon-font-base-url: 'http://localhost:4003';`
             }
           }
         ],
@@ -63,7 +63,7 @@ module.exports = {
       remotes: {
         remoteA: "remoteA@http://localhost:4001/remoteEntryA.js",
         remoteB: "remoteB@http://localhost:4002/remoteEntryB.js",
-        remoteC: "remoteC@http://localhost:3003/remoteEntryC.js",
+        // remoteC: "remoteC@http://localhost:3003/remoteEntryC.js",
       },
       shared: {
         react: { singleton: true, requiredVersion: "^18.0.0" },
@@ -72,7 +72,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      fontUrl:  "http://localhost:4003/assets/font/IconFont.woff2"
+      fontUrl: "http://localhost:4003/fonts/IconFont.woff2"
     }),
   ],
   resolve: {
