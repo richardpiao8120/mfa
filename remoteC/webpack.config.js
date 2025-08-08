@@ -57,18 +57,18 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "remoteC",
       filename: "remoteEntryC.js",
-      exposes: {
-        "./App": "./src/App",
-        "./polestar_logo.png": "./public/assets/image/polestar_logo.png",
-      },
+      // exposes: {
+      //   "./App": "./src/App",
+      //   "./polestar_logo.png": "./public/assets/image/polestar_logo.png",
+      // },
       shared: {
         react: { singleton: true, requiredVersion: "18.2.0" },
         "react-dom": { singleton: true, requiredVersion: "18.2.0" },
       },
     }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: "./public/index.html",
+    // }),
   ],
   resolve: {
     extensions: [".js", ".jsx"],

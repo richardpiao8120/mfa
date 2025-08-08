@@ -35,6 +35,19 @@ module.exports = {
         },
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              additionalData: `$icon-font-base-url: 'http://localhost:4003';`
+            }
+          }
+        ],
+      },
+      {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },

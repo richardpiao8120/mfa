@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/IconFont.css";
+import "../style/IconFont.scss";
 
 export default function SharedComponent({ children }) {
   return (

@@ -1,9 +1,6 @@
-/* @import './font.css'; */
 @font-face {
   font-family: "nds-icon-2.6";
-  src: url("../assets/IconFont.woff2") format("woff2");
-  /* url("../assets/IconFont.woff?t=1753425275239") format("woff"),
-    url("../assets/IconFont.ttf?t=1753425275239") format("truetype"); */
+  src: url("#{$icon-font-base-url}/assets/font/IconFont.woff2") format("woff2");
   font-display: swap;
 }
 
