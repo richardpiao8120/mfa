@@ -42,7 +42,7 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-              additionalData: `$icon-font-base-url: 'http://localhost:4003';`
+              additionalData: `$icon-font-base-url: '/asset/font/aaaaaa.font';`
             }
           }
         ],
@@ -72,6 +72,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      fontUrl:  "http://localhost:4003/assets/font/IconFont.woff2"
     }),
   ],
   resolve: {
