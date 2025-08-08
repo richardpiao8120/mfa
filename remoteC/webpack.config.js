@@ -12,12 +12,13 @@ module.exports = {
     clean: true,
   },
   devServer: {
-    static: path.join(__dirname, "public"),
-    port: 3003,
-    open: true,
-    hot: true,
+    port: 4003,
+    historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
     headers: {
-      "Access-Control-Allow-Origin": "*",
+        'Access-Control-Allow-Origin': '*',
     },
   },
   module: {
@@ -58,7 +59,7 @@ module.exports = {
       filename: "remoteEntryC.js",
       exposes: {
         "./App": "./src/App",
-        "./polestar_logo.png": "./public/assets/polestar_logo.png",
+        "./polestar_logo.png": "./public/assets/image/polestar_logo.png",
       },
       shared: {
         react: { singleton: true, requiredVersion: "18.2.0" },

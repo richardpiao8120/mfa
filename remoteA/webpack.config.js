@@ -13,10 +13,13 @@ module.exports = {
     clean: true,
   },
   devServer: {
-    port: 3001,
+    port: 4001,
     historyApiFallback: true,
     static: {
       directory: path.join(__dirname, "public"),
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
     },
   },
   module: {

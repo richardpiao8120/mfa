@@ -13,10 +13,13 @@ module.exports = {
     clean: true,
   },
   devServer: {
-    port: 3000,
+    port: 4000,
     historyApiFallback: true,
     static: {
       directory: path.join(__dirname, "public"),
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
     },
   },
   module: {
@@ -45,8 +48,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "host",
       remotes: {
-        remoteA: "remoteA@http://localhost:3001/remoteEntryA.js",
-        remoteB: "remoteB@http://localhost:3002/remoteEntryB.js",
+        remoteA: "remoteA@http://localhost:4001/remoteEntryA.js",
+        remoteB: "remoteB@http://localhost:4002/remoteEntryB.js",
         remoteC: "remoteC@http://localhost:3003/remoteEntryC.js",
       },
       shared: {
