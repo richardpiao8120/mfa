@@ -6,8 +6,6 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h2>Remote App B</h2>
-
       <SharedComponent>This is a shared component from RemoteB</SharedComponent>
     </div>
   );

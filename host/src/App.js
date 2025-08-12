@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import SharedComponent from "shared/components/SharedComponent";
 const RemoteButtonA = React.lazy(() => import("remoteA/Button"));
 const RemoteBapp = React.lazy(() => import("remoteB/App"));
-// const RemoteCLogo = React.lazy(() => import("remoteC/assets/imagepolestar_logo.png"));
+const RemoteDrawerAgGrid = React.lazy(() => import("remoteD/DrawerAgGrid"));
 
 export default function App() {
+  const [showDrawer, setShowDrawer] = useState(false);
 
   return (
     <div>
@@ -17,7 +18,13 @@ export default function App() {
         <br />
         <SharedComponent>This is a shared component from Host</SharedComponent>
         <br />
-        <img src="http://localhost:4003/images/polestar_logo.png" alt="Polestar Logo" />
+        <button onClick={() => setShowDrawer(true)}>
+          shared Drawer with AG Grid
+        </button>
+        <RemoteDrawerAgGrid
+          open={showDrawer}
+          onClose={() => setShowDrawer(false)}
+        />
       </React.Suspense>
     </div>
   );

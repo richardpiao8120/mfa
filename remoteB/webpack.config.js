@@ -19,7 +19,7 @@ module.exports = {
       directory: path.join(__dirname, "public"),
     },
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": "*",
     },
   },
   module: {
@@ -42,9 +42,9 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-              additionalData: `$icon-font-base-url: 'http://localhost:4003';`
-            }
-          }
+              additionalData: `$icon-font-base-url: 'http://localhost:4003';`,
+            },
+          },
         ],
       },
       {

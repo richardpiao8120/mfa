@@ -19,7 +19,7 @@ module.exports = {
       directory: path.join(__dirname, "public"),
     },
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Origin": "*",
     },
   },
   module: {
@@ -42,9 +42,9 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
-               additionalData: `$icon-font-base-url: 'http://localhost:4003';`
-            }
-          }
+              additionalData: `$icon-font-base-url: 'http://localhost:4003';`,
+            },
+          },
         ],
       },
       {
@@ -63,7 +63,7 @@ module.exports = {
       remotes: {
         remoteA: "remoteA@http://localhost:4001/remoteEntryA.js",
         remoteB: "remoteB@http://localhost:4002/remoteEntryB.js",
-        // remoteC: "remoteC@http://localhost:3003/remoteEntryC.js",
+        remoteD: "remoteD@http://localhost:4004/remoteEntryD.js",
       },
       shared: {
         react: { singleton: true, requiredVersion: "^18.0.0" },
@@ -72,7 +72,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      fontUrl: "http://localhost:4003/fonts/IconFont.woff2"
+      fontUrl: "http://localhost:4003/fonts/IconFont.woff2",
     }),
   ],
   resolve: {
