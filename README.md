@@ -23,3 +23,4 @@ This project demonstrates React Module Federation using Webpack 5. It contains t
 - The `remote` app exposes a Button component.
 - The `host` app loads the remote Button using Module Federation.
 - The `shared` folder contains code/components that can be imported by both apps.
+# mfa
